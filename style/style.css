@@ -1,0 +1,74 @@
+body {
+    margin: 0px;
+}
+.background {
+    background-image: url('../img/bg.jpg'); height: 1000px; width: 100%; position: relative;
+}
+
+
+
+.grahpic2 {
+    display: none;
+}
+.grahpic1 {
+    display: block;
+}
+@media screen and (max-width: 768px) {
+    .background {
+        background-image: url('../img/bg_mobile.jpg'); height: 1000px; width: 100%; position: relative;
+    }
+    .frame-logo1 {
+        background-image: url('../img/frame-with-logo1.png');
+    }
+    .frame-logo2 {
+        background-image: url('../img/frame-with-logo2.png');
+    }
+    .frame-logo3 {
+        background-image: url('../img/frame-with-logo3.png');
+    }
+    .grahpic1{
+        display: none;
+    }
+    .grahpic2{
+        display: block;
+    }
+}
+
+.frame-logo1 {
+    background-image: url('../img/frame-with-logo1.png');
+    height: 443px; width: 382px; 
+    background-repeat: no-repeat; 
+    position: absolute;
+    cursor: pointer;
+    left: 485px;
+}
+
+.frame-logo1:hover {
+    background-image: url('../img/mouseover1.png');
+}
+
+.frame-logo2 {
+    background-image: url('../img/frame-with-logo2.png');
+    height: 443px; width: 382px; 
+    background-repeat: no-repeat; 
+    position: absolute;
+    cursor: pointer;
+    left: 900px;
+}
+
+.frame-logo2:hover {
+    background-image: url('../img/mouseover2.png');
+}
+
+.frame-logo3 {
+    background-image: url('../img/frame-with-logo3.png');
+    height: 443px; width: 382px; 
+    background-repeat: no-repeat; 
+    position: absolute;
+    cursor: pointer;
+    right: 485px;
+}
+
+.frame-logo3:hover {
+    background-image: url('../img/mouseover3.png');
+}

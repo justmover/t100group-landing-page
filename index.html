@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+        function hover(element) {
+            if (element.id == 1)
+                element.setAttribute('src', './img/mouseover1.png');
+            if (element.id == 2)
+                element.setAttribute('src', './img/mouseover2.png');
+            if (element.id == 3)
+                element.setAttribute('src', './img/mouseover3.png');
+        }
+        function unhover(element) {
+            if (element.id == 1)
+                element.setAttribute('src', './img/frame-with-logo1.png');
+            if (element.id == 2)
+                element.setAttribute('src', './img/frame-with-logo2.png');
+            if (element.id == 3)
+                element.setAttribute('src', './img/frame-with-logo3.png');
+        }
+    </script>
 </head>
 
 <body>
+
+    <!-- Banner section -->
     <div class="background">
-        <div class="graphic"></div>
+        <img id="graph" src="./img/graphic_web.png" class="graphic">
+        <a href="#section1" id="btn-scroll">
+            <span id="arrow"></span>
+        </a>
+    </div>
+    <img src="./img/graphic_mobile.png" class="graphic-mobile">
+
+    <!-- Yellow-bar section -->
+    <div class="yellow-bar">
+        <span class="msg1">Full-service marketing agency in Hong Kong</span>
+        <br>
+        <span class="msg2">professional online & offline promotion</span>
     </div>
 
-    <div class="yellow-bar">
-        <div class="msg-box">
-            <div class="msg1">Full-service marketing agency in Hong Kong</div>
-            <div class="msg2">professional online & offline promotion</div>
+    <!-- Button section -->
+    <div id="section1" class="btn-group">
+        <div style="margin: auto;">
+            <a href="https://talent100.t100group.com">
+                <img id="1" src="./img/frame-with-logo1.png" alt="" class="" onmouseover="hover(this);" onmouseout="unhover(this);">
+            </a>
+            <a href="https://justmove.hk">
+                <img id="2" src="./img/frame-with-logo2.png" alt="" class="" onmouseover="hover(this);" onmouseout="unhover(this);" style=" margin-left:63px; margin-right:63px">
+            </a>
+            <a href="https://wowternet.t100group.com">
+                <img id="3" src="./img/frame-with-logo3.png" alt="" class="" onmouseover="hover(this);" onmouseout="unhover(this);">
+            </a>
         </div>
     </div>
-
-    <div class="btn-group">
+    <div class="btn-group-mobile">
         <a href="https://talent100.t100group.com">
-            <div class="btn-0"></div>
+            <img id="1" src="./img/frame-with-logo1.png" alt="" onmouseover="hover(this);" onmouseout="unhover(this);">
         </a>
         <a href="https://justmove.hk">
-            <div class="btn-1"></div>
+            <img id="2" src="./img/frame-with-logo2.png" alt="" style="transform: translateY(-4px)" onmouseover="hover(this);" onmouseout="unhover(this);">
         </a>
         <a href="https://wowternet.t100group.com">
-            <div class="btn-2"></div>
+            <img id="3" src="./img/frame-with-logo3.png" alt="" style="transform: translate(1px,-8px)" onmouseover="hover(this);" onmouseout="unhover(this);">
         </a>
     </div>
+
 </body>
 
 </html>

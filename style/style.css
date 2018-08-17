@@ -1,32 +1,36 @@
 body { margin: 0px; }
 
+/* Banner section */
 .background {
     background-image: url('../img/bg.jpg'); 
     background-repeat: no-repeat;
-    height: 1000px; 
-    width: 1920px; 
+    height: 750px; 
+    width: 100%;
+    position: relative
 }
 .graphic {
-    background-image: url('../img/graphic_web.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1000px;
-    /* width: 100%; */
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
 }
+.graphic-mobile {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+/* Yelow-bar section */
 .yellow-bar {
     background-color: #FEDD62;
-    background-size: cover;
-    height: 200px;
-    width: 1920px;
+    height: 150px;
+    text-align:center;
     position: relative;
-}
-.msg-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top: 43px;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
 }
 .msg1 {
     color: #EB2425;
@@ -36,73 +40,88 @@ body { margin: 0px; }
     color: #8A5D3B;
     font-size: 24px;
 }
+
+/* Button group section */
 .btn-group {
-    position: relative;
+    text-align: center;
 }
-.btn-0 {
-    background-image: url(../img/frame-with-logo1.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    height: 443px;
-    width: 382px;
-    left: 285px;
-}
-.btn-1 {
-    background-image: url(../img/frame-with-logo2.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    height: 443px;
-    width: 401px;
-    left: 758px;
-}
-.btn-2 {
-    background-image: url(../img/frame-with-logo3.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    height: 443px;
-    width: 382px;
-    left: 1251px;
+.btn-group-mobile {
+    display: none;
+    text-align: center;
 }
 
-.btn-0:hover {
-    background-image: url(../img/mouseover1.png)
+/* Scroll down button section */
+#arrow {
+    position: absolute;
+    top: 441px;
+    left: 49.9%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    box-sizing: border-box;
+    transition: border 500ms ease-out;
+    -webkit-transition : border 500ms ease-out; 
+    -moz-transition : border 500ms ease-out;
+    -o-transition : border 500ms ease-out;
+    
 }
-.btn-1:hover {
-    background-image: url(../img/mouseover2.png)
-}
-.btn-2:hover {
-    background-image: url(../img/mouseover3.png)
+#arrow::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -12px 0 0 -8px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
 }
 
+#arrow:hover {
+    transition: color .9s;
+    opacity: .5;
+    border: 1px solid #333;
+    background-color: #333;
+    transition: border 200ms ease-out;
+    -webkit-transition : border 200ms ease-out; 
+    -moz-transition : border 200ms ease-out;
+    -o-transition : border 200ms ease-out;
+}
 
 @media screen and (max-width: 711px) {
     .background {
-        background-image: url('../img/bg_mobile.jpg');
-        height: 1111px;
-        width: 711px;
+        display: none;
     }
     .graphic {
-        background-image: url('../img/graphic_mobile.png');
-        height: 1111px;
+        display: none;
+    }
+    .graphic-mobile {
+        display: block;
     }
     .yellow-bar {
-        width: 711px;
+        width: 100%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        height: auto;
+    }
+    .msg1 {
+        font-size: 4vw;
+    }
+    .msg2 {
+        font-size: 3vw;
     }
     .btn-group {
-        position: static;
-        width: 711px
+        display: none;
     }
-    .btn-0 {
-        position: static;
-        margin: auto;
+    .btn-group-mobile {
+        display: block;
     }
-    .btn-1 {
-        position: static;
-        margin: auto;
+    #btn-scroll {
+        display:none;
     }
-    .btn-2 {
-        position: static;
-        margin: auto;
-    }
-
 }
